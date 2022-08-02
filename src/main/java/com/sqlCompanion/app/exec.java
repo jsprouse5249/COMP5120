@@ -10,23 +10,25 @@ public class exec {
         try{
             // The newInstance() call is a work around for some
             // broken Java implementations
-            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor()
-                    .newInstance();
-            //change these
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             String dbName="final_project";
-            String port="Your Database Server Port";
-            String pwd="Your root Password";
+            String port="3306";
+            String pwd="root";
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:"+port+"/"+dbName+"?"+ "user=root&password="+pwd);
 
             Statement stmt=conn.createStatement();
-            ResultSet rs=stmt.executeQuery("SELECT * FROM Planets");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM book");
             while(rs.next()) {
-                int id=rs.getInt("ID");
-                String name=rs.getString("name"); System.out.println(id+"---"+name);
+                int id = rs.getInt("BookID");
+                String name = rs.getString("BookName");
+                System.out.println(id+"---"+name);
             }
         } catch(SQLException ex) {
-            System.out.println("SQLException: "+ex.getMessage()); System.out.println("SQLState: "+ex.getSQLState()); System.out.println("VendorError: "+ex.getErrorCode());
+            System.out.println("SQLException: "+ ex.getMessage());
+            System.out.println("SQLState: "+ ex.getSQLState());
+            System.out.println("VendorError: "+ ex.getErrorCode());
     } catch(Exception e) {
-        System.out.println("Unkown Error:"+e.getMessage()); }
+            System.out.println("Unkown Error:"+ e.getMessage());
+        }
     }
 }
