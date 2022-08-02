@@ -9,7 +9,8 @@ module com.example.demo {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.sql;
 
-    opens com.example.demo to javafx.fxml;
-    exports com.example.demo;
+    opens com.sqlCompanion.app to javafx.fxml;
+    exports com.sqlCompanion.app;
 }

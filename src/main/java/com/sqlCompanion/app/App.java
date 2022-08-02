@@ -1,8 +1,7 @@
-package com.example.demo;
+package com.sqlCompanion.app;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -15,7 +14,7 @@ import javafx.scene.control.Label;
 import java.io.IOException;
 import javafx.scene.control.Button;
 
-public class HelloApplication extends Application {
+public class App extends Application {
     HBox hbox;
     VBox vbox;
 
